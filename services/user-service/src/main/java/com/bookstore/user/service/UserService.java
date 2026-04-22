@@ -1,5 +1,7 @@
 package com.bookstore.user.service;
 
+import com.bookstore.user.dto.UserRequestDTO;
+import com.bookstore.user.dto.UserResponseDTO;
 import com.bookstore.user.entity.User;
 import com.bookstore.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,20 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User register(User user) {
-        return userRepository.save(user);
+    public UserResponseDTO register(UserRequestDTO request) {
+
+        User user = new User(
+                request.getName(),
+                request.getEmail(),
+                request.getPassword()
+        );
+
+        User saved = userRepository.save(user);
+
+        return new UserResponseDTO(
+                saved.getId(),
+                saved.getName(),
+                saved.getEmail()
+        );
     }
 }

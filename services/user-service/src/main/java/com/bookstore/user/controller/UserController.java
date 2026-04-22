@@ -1,7 +1,9 @@
 package com.bookstore.user.controller;
 
-import com.bookstore.user.entity.User;
+import com.bookstore.user.dto.UserRequestDTO;
+import com.bookstore.user.dto.UserResponseDTO;
 import com.bookstore.user.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,9 +17,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public User register(@RequestBody User user) {
-            System.out.println("🔥 REGISTER API HIT");
-            return userService.register(user);
-
+    public UserResponseDTO register(@Valid @RequestBody UserRequestDTO request) {
+        return userService.register(request);
     }
 }
