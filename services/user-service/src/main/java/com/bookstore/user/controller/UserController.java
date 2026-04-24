@@ -5,6 +5,8 @@ import com.bookstore.user.dto.UserResponseDTO;
 import com.bookstore.user.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import com.bookstore.user.dto.LoginRequestDTO;
+import com.bookstore.user.dto.LoginResponseDTO;
 
 @RestController
 @RequestMapping("/users")
@@ -19,5 +21,9 @@ public class UserController {
     @PostMapping("/register")
     public UserResponseDTO register(@Valid @RequestBody UserRequestDTO request) {
         return userService.register(request);
+    }
+    @PostMapping("/login")
+    public LoginResponseDTO login(@RequestBody LoginRequestDTO request) {
+        return userService.login(request);
     }
 }
