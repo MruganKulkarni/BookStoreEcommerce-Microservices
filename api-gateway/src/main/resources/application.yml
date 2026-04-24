@@ -8,12 +8,20 @@ spring:
   cloud:
     gateway:
       routes:
+
+        # 🔹 Test route (httpbin)
         - id: test-route
           uri: http://httpbin.org
           predicates:
             - Path=/test/**
           filters:
             - RewritePath=/test/(?<segment>.*), /${segment}
+
+        # 🔹 User Service route (IMPORTANT 🔥)
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
 
 eureka:
   client:
