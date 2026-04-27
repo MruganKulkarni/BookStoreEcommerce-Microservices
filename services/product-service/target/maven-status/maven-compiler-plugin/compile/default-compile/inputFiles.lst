@@ -1,0 +1,6 @@
+/Users/mrugankulkarni/Developer/bookstore-microservices/services/product-service/src/main/java/com/bookstore/product/dto/ProductRequestDTO.java
+/Users/mrugankulkarni/Developer/bookstore-microservices/services/product-service/src/main/java/com/bookstore/product/service/ProductService.java
+/Users/mrugankulkarni/Developer/bookstore-microservices/services/product-service/src/main/java/com/bookstore/product/repository/ProductRepository.java
+/Users/mrugankulkarni/Developer/bookstore-microservices/services/product-service/src/main/java/com/bookstore/product/entity/Product.java
+/Users/mrugankulkarni/Developer/bookstore-microservices/services/product-service/src/main/java/com/bookstore/product/ProductServiceApplication.java
+/Users/mrugankulkarni/Developer/bookstore-microservices/services/product-service/src/main/java/com/bookstore/product/controller/ProductController.java

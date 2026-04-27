@@ -10,6 +10,7 @@ import com.bookstore.user.dto.LoginRequestDTO;
 import com.bookstore.user.dto.LoginResponseDTO;
 import com.bookstore.user.config.JwtUtil;
 import com.bookstore.user.exception.InvalidCredentialsException;
+import com.bookstore.user.client.TestClient;
 
 @Service
 public class UserService {
@@ -17,13 +18,16 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
+    private final TestClient testClient;
 
     public UserService(UserRepository userRepository,
                        PasswordEncoder passwordEncoder,
-                       JwtUtil jwtUtil) {
+                       JwtUtil jwtUtil,
+                       TestClient testClient) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;
+        this.testClient = testClient;
     }
 
     public UserResponseDTO register(UserRequestDTO request) {
@@ -56,5 +60,8 @@ public class UserService {
         String token = jwtUtil.generateToken(user.getEmail());
 
         return new LoginResponseDTO(token);
+    }
+    public String callTestService() {
+        return testClient.testCall();
     }
 }

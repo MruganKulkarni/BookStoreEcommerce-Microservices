@@ -9,19 +9,23 @@ spring:
     gateway:
       routes:
 
-        # 🔹 Test route (httpbin)
-        - id: test-route
-          uri: http://httpbin.org
-          predicates:
-            - Path=/test/**
-          filters:
-            - RewritePath=/test/(?<segment>.*), /${segment}
-
-        # 🔹 User Service route (IMPORTANT 🔥)
+        # USER SERVICE
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/users/**
+
+        # PRODUCT SERVICE  👈 ADD THIS
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/products/**
+
+        # ORDER SERVICE (if not already)
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/orders/**
 
 eureka:
   client:

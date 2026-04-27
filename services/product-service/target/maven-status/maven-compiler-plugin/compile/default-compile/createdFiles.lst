@@ -1,0 +1,6 @@
+com/bookstore/product/controller/ProductController.class
+com/bookstore/product/service/ProductService.class
+com/bookstore/product/ProductServiceApplication.class
+com/bookstore/product/repository/ProductRepository.class
+com/bookstore/product/dto/ProductRequestDTO.class
+com/bookstore/product/entity/Product.class

@@ -1,0 +1,3 @@
+com/bookstore/gateway/filter/JwtAuthenticationFilter.class
+com/bookstore/gateway/GatewayApplication.class
+com/bookstore/gateway/config/JwtUtil.class

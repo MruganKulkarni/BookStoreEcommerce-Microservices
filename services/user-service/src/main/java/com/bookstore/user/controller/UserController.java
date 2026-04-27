@@ -26,4 +26,8 @@ public class UserController {
     public LoginResponseDTO login(@RequestBody LoginRequestDTO request) {
         return userService.login(request);
     }
+    @GetMapping("/test-call")
+    public String testCall() {
+        return userService.callTestService();
+    }
 }
