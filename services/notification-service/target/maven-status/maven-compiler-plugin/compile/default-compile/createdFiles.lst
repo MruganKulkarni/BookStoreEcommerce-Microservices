@@ -1,0 +1,4 @@
+com/bookstore/notification/consumer/OrderEventConsumer.class
+com/bookstore/notification/config/JacksonConfig.class
+com/bookstore/notification/NotificationServiceApplication.class
+com/bookstore/notification/dto/OrderEvent.class

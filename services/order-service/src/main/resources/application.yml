@@ -15,13 +15,16 @@ spring:
       ddl-auto: update
     show-sql: true
 
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
   kafka:
     bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
-# ✅ OUTSIDE spring
 resilience4j:
   circuitbreaker:
     instances:
@@ -32,19 +35,22 @@ resilience4j:
   retry:
     instances:
       productService:
-        maxAttempts: 3          # 1 original + 2 retries
-        waitDuration: 1s        # delay between retries
+        maxAttempts: 3
+        waitDuration: 1s
         retryExceptions:
           - java.lang.Exception
+
 feign:
   client:
     config:
       default:
-        connectTimeout: 3000   # 3 sec
-        readTimeout: 3000      # 3 sec
-
+        connectTimeout: 3000
+        readTimeout: 3000
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
