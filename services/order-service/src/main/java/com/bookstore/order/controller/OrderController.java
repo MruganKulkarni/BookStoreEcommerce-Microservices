@@ -6,6 +6,8 @@ import com.bookstore.order.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 import com.bookstore.order.dto.ApiResponse;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -26,5 +28,9 @@ public class OrderController {
                 "Order created successfully",
                 order
         );
+    }
+    @PostMapping("/cart/{userId}")
+    public List<Order> placeOrderFromCart(@PathVariable Long userId) {
+        return orderService.placeOrderFromCart(userId);
     }
 }

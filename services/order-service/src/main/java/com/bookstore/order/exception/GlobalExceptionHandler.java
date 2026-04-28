@@ -19,10 +19,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ApiResponse<Object> handleGeneric(Exception ex) {
+    public ApiResponse<String> handleGeneric(Exception ex) {
+        ex.printStackTrace(); // 🔥 ADD THIS
         return new ApiResponse<>(
                 500,
-                "Something went wrong",
+                ex.getMessage(),   // 🔥 SHOW REAL ERROR
                 null
         );
     }

@@ -9,28 +9,27 @@ spring:
     gateway:
       routes:
 
-        # USER SERVICE
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/users/**
 
-        # PRODUCT SERVICE  👈 ADD THIS
         - id: product-service
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/products/**
 
-        # ORDER SERVICE (if not already)
         - id: order-service
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/orders/**
 
+        - id: cart-service
+          uri: lb://CART-SERVICE
+          predicates:
+            - Path=/cart/**
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
-    prefer-ip-address: false
