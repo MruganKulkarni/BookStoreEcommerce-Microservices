@@ -32,6 +32,14 @@ spring:
           uri: lb://WISHLIST-SERVICE
           predicates:
             - Path=/wishlist/**
+        - id: customer-service
+          uri: lb://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customers/**
+        - id: feedback-service
+          uri: lb://FEEDBACK-SERVICE
+          predicates:
+            - Path=/feedback/**
 
 eureka:
   client:

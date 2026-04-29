@@ -13,6 +13,7 @@
         <module name="product-service" />
         <module name="user-service" />
         <module name="order-service" />
+        <module name="feedback-service" />
         <module name="eureka-server" />
         <module name="wishlist-service" />
         <module name="notification-service" />
@@ -26,6 +27,7 @@
       <module name="config-server" options="-parameters" />
       <module name="customer-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="feedback-service" options="-parameters" />
       <module name="notification-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
