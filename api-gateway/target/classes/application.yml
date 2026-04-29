@@ -28,6 +28,10 @@ spring:
           uri: lb://CART-SERVICE
           predicates:
             - Path=/cart/**
+        - id: wishlist-service
+          uri: lb://WISHLIST-SERVICE
+          predicates:
+            - Path=/wishlist/**
 
 eureka:
   client:
