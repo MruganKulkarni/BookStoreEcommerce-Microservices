@@ -29,7 +29,7 @@
         <module>services/order-service</module>
         <module>services/cart-service</module>
         <module>services/wishlist-service</module>
-<!--        <module>services/customer-service</module>-->
+        <module>services/customer-service</module>
 <!--        <module>services/feedback-service</module>-->
         <module>services/notification-service</module>
 
